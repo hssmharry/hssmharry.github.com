@@ -34,6 +34,7 @@ $(() => {
       setGameTable(tableId, index, prop, order) {
         $('#content').empty();
 
+        const dataSortType = {summoner:SORTING_TYPE.TEXT, champion:SORTING_TYPE.TEXT, kda:SORTING_TYPE.TEXT, cs:SORTING_TYPE.NUMBER, damage:SORTING_TYPE.NUMBER, receiveDamage:SORTING_TYPE.NUMBER, sight:SORTING_TYPE.NUMBER};
         const isWinTable = tableId ? tableId.includes('win') : null;
         const $frag = $(document.createDocumentFragment());
         lol.main.DATA.forEach(data => {
@@ -47,19 +48,46 @@ $(() => {
             const sortInfo = {};
             sortInfo[prop] = order;
 
-            const winTr = lol.common.sort(game.win.members,
-                                          SORTING_TYPE.TEXT,
-                                          isWinTable && matchIndex ? prop : defaultProp,
-                                          isWinTable && matchIndex ? order : deraultOrder)
-                             .map(member => template.gameTableTbody(member)).join('');
-            const loseTr = lol.common.sort(game.lose.members,
-                                          SORTING_TYPE.TEXT,
-                                          !isWinTable && matchIndex ? prop : defaultProp,
-                                          !isWinTable && matchIndex ? order : deraultOrder)
-                             .map(member => template.gameTableTbody(member)).join('');
+            const data = {
+              win: {
+                prop: isWinTable && matchIndex ? prop : defaultProp,
+                order: isWinTable && matchIndex ? order : deraultOrder,
+                sortInfo: isWinTable && matchIndex ? sortInfo : {}
+              },
+              lose: {
+                prop: !isWinTable && matchIndex ? prop : defaultProp,
+                order: !isWinTable && matchIndex ? order : deraultOrder,
+                sortInfo: !isWinTable && matchIndex ? sortInfo : {}
+              }
+            };
 
-            const winTable = template.gameTable('win', winTr, i, isWinTable && matchIndex ? sortInfo : {});
-            const loseTable = template.gameTable('lose', loseTr, i, !isWinTable && matchIndex ? sortInfo : {});
+            const winTr = lol.common.sort(game.win.members,
+                                          dataSortType[data.win.prop] || SORTING_TYPE.TEXT,
+                                          data.win.prop,
+                                          data.win.order)
+                             .map(member => {
+                               $.each(member, (i, v) => {
+                                  if (dataSortType[i] === SORTING_TYPE.NUMBER) {
+                                    member[i] = lol.common.appendComma([v]);
+                                  }
+                               });
+                               return template.gameTableTbody(member);
+                             }).join('');
+            const loseTr = lol.common.sort(game.lose.members,
+                                          dataSortType[data.lose.prop] || SORTING_TYPE.TEXT,
+                                          data.lose.prop,
+                                          data.lose.order)
+                              .map(member => {
+                                  $.each(member, (i, v) => {
+                                      if (dataSortType[i] === SORTING_TYPE.NUMBER) {
+                                          member[i] = lol.common.appendComma([v]);
+                                      }
+                                  });
+                                  return template.gameTableTbody(member);
+                              }).join('');;
+
+            const winTable = template.gameTable('win', winTr, i, data.win.sortInfo);
+            const loseTable = template.gameTable('lose', loseTr, i, data.lose.sortInfo);
             const gameWrap = template.gameWrap(i+1, winTable, loseTable);
             $frag.append(gameWrap);
           });

@@ -44,5 +44,17 @@ lol.common = {
                     return (bValue > aValue) ? 1 : (bValue < aValue ? -1 : 0);
                 }
             });
-  }
+  },
+
+    appendComma: function (parts) {
+        let commaVal = '';
+        if (parts.length == 1) {
+            commaVal = `${parts[0].replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,')}`;
+        } else if (parts.length == 2) {
+            commaVal = `${parts[0].replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,')}.${parts[1]}`;
+        } else {
+            commaVal = '';
+        }
+        return commaVal;
+    }
 };
