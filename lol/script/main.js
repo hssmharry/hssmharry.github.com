@@ -34,7 +34,7 @@ $(() => {
       setGameTable(tableId, index, prop, order) {
         $('#content').empty();
 
-        const dataSortType = {summoner:SORTING_TYPE.TEXT, champion:SORTING_TYPE.TEXT, kda:SORTING_TYPE.TEXT, cs:SORTING_TYPE.NUMBER, damage:SORTING_TYPE.NUMBER, receiveDamage:SORTING_TYPE.NUMBER, sight:SORTING_TYPE.NUMBER};
+        const dataSortType = {summoner:SORTING_TYPE.TEXT, champion:SORTING_TYPE.TEXT, kda:SORTING_TYPE.KDA, cs:SORTING_TYPE.NUMBER, damage:SORTING_TYPE.NUMBER, receiveDamage:SORTING_TYPE.NUMBER, sight:SORTING_TYPE.NUMBER};
         const isWinTable = tableId ? tableId.includes('win') : null;
         const $frag = $(document.createDocumentFragment());
         lol.main.DATA.forEach(data => {
@@ -95,6 +95,11 @@ $(() => {
 
         $('#content').append($frag);
       }
+    },
+
+    sortTh(e) {
+      console.log('th >_<', $(e.target).find('.sortBtn'));
+      lol.main.sort({target: $(e.target).find('.sortBtn')[0]});
     },
 
     sort(e) {

@@ -7,11 +7,11 @@ html, body {margin:0 auto; padding:0 auto; width:100%; height:100%; font-size:1e
 .actionBtn {cursor:pointer;}
 
 .sortBtn {margin-left:3px; font-size:0.5em;}
-.sortBtn[data-order=ASC]:after {cursor:pointer; content:'▲';}
-.sortBtn[data-order=DESC]:after {cursor:pointer; content:'▼';}
+.sortBtn[data-order=ASC]:after {cursor:pointer; content:'▼';}
+.sortBtn[data-order=DESC]:after {cursor:pointer; content:'▲';}
 
 .game_date {text-align:left; border-bottom:1px solid #666; padding-bottom:10px; margin-bottom:15px; font-size:bold; font-size:1.1em;}
-.game_wrap {display:flex; flex-direction:column; justify-content:flex-start;}
+.game_wrap {}
 .game_wrap:not(:last-child) {margin-bottom:10px;}
 .game_no {text-align:left; margin-bottom:5px; font-size:bold; font-size:0.9em;}
 .game_no:before {content:'GAME ';}
