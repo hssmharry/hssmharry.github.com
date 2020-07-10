@@ -1,0 +1,73 @@
+html, body {margin:0 auto; padding:0 auto; width:100%; height:100%; font-size:1em; font-family: 'Nanum Myeongjo', serif; color:#666; display:flex; justify-content:center}
+#container {position:relative; width:100%; max-width:850px; height:100%; display:flex; flex-direction:column; justify-content:space-between; text-align:center;}
+#header {width:100%; height:50px;}
+#content {width:100%; height:93%; display:flex; flex-direction:row; justify-content:space-between; align-content: center;}
+#footer {width:100%; height:7%; display:flex; justify-content:center; align-items:center;}
+
+#header span {border-bottom:1px solid #666; display:inline-block; padding:2% 5%;}
+
+.page_wrap {width:100%; height:100%; z-index:99;}
+.page_wrap .page {width:100%; height:100%; display:flex; flex-direction:column; justify-content:flex-start; text-align:center;}
+/* .page:not(:first-child) {display:none;} */
+.swiper-pagination-bullet {cursor:pointer; width:8; height:8px;}
+.swiper-pagination-bullet:not(:last-child) {margin-right:7px;}
+
+.content_text {padding:5%; width:90%; display:flex; flex-direction:column;}
+.content_text.mini {font-size:0.85em; padding:0%; width:100%;}
+.content_text.white {background:rgba(255,255,255, 0.38);}
+.content_text .text {width:100%; font-size:0.9em; line-height:1.65em;}
+.content_text.large .text{font-size:1em;}
+
+/* page 1 */
+.content_wrap {width:100%; height:35%; display:flex; justify-content:center;}
+.content_wrap .main_title {text-align:center;}
+.main_title {display:flex; flex-direction:column; justify-content:center; width:63%;}
+.main_title span {font-size:0.75em;}
+.name_wrap {width:37%;}
+.name_wrap .name {font-size:1.35em;}
+.name_wrap .and {display:inline-block; margin:6% 0%;}
+.name_wrap .line {display:inline-block; background:#666; width:23%; height:1px; vertical-align:middle;}
+.main_image {width:100%; height:38%; margin-bottom:5%; overflow:hidden; text-align:center; display:flex; flex-direction:column; justify-content:flex-end;}
+.page[data-page="1"] .main_image {height:46%;}
+.page[data-page="1"] .main_image img {height:100%; width:auto;}
+.main_image img {width:100%; height:auto;}
+.page[data-page="2"] .main_image img {width:120%; height:123%; margin-left:-10%;}
+.right_wrap {width:90%; text-align:right;}
+
+/* page 2 */
+.content_title {font-size:1.4em; margin-top:4%;}
+.content_title span {padding:3% 5%; font-weight:bold; margin-bottom:8%; display:inline-block; border-top:2.5px solid #666; border-bottom:1px solid #666;}
+.line_wrap {width:100%; text-align:center; margin-top:5%;}
+.line_wrap .line {display:inline-block; width:13%; background:#666; height:2px;}
+#profile_table {margin-top:6%; width:100%; padding-top:2%; margin-left:-6%;}
+#profile_table td {font-size:0.9em; }
+#profile_table .parents {text-align:right; font-size:1.2em;}
+#profile_table .name {font-size:1.15em;}
+
+/* page 3 */
+.page:not([data-page="1"]):not([data-page="2"]) .content_title {font-size:1.35em;}
+.page:not([data-page="1"]):not([data-page="2"]) .line_wrap {margin-top:3%;}
+.main_photo_wrap {width:100%; margin-top:5%;}
+.main_photo {width:100%; height:65%; margin:0 auto; display:flex; flex-direction:column; justify-content:center; overflow:hidden;}
+.main_photo img {width:80%; max-height:120%; height:auto; margin:0 auto;}
+.photo_area {overflow-y:auto;}
+.photo_wrap {width:80%; display:flex; flex-direction:row; justify-content:space-between; overflow:auto; padding:0px; margin:0 auto; margin-top:5%;}
+.photo_wrap .photo {width:20%; height:8%; overflow:hidden;}
+.photo_wrap .photo.on {opacity:1.0;}
+.photo_wrap .photo img {width:100%; min-height:100%; height:auto;}
+
+.photo_wrap {flex-direction:column; justify-content:center; width:90%; height:95%;}
+.photo_wrap .photo_line {display:flex; flex-direction:row; justify-content:space-around;}
+.photo_wrap .photo_line:not(last-child) {margin-bottom:6%;}
+.photo_wrap .photo_line .photo {opacity:0.65; width:23%; height:12%; cursor:pointer;}
+.photo_wrap .photo_line .photo img{width:100%; height:100%; cursor:pointer;}
+#selectedPhoto {background:rgba(200,200,200, .75); position:absolute; width:100%; height:100%; z-index:99; display:flex; flex-direction:column; justify-content:center; display:none;}
+#selectedPhoto img {width:100%; height:auto;}
+
+#map {border:1px solid #000; height:85%;}
+.link a {font-weight:bold; color:#000; }
+
+#sns_table {text-align:center; width:100%;}
+#sns_table td:first-child {border-right:1px solid #666;}
+.sns_icon img {width:25px; height:25px; cursor:pointer;}
+div.sns_icon * {vertical-align: middle;}
