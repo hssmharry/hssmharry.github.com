@@ -27,7 +27,7 @@ html, body {margin:0 auto; padding:0 auto; width:100%; height:100%; font-size:1e
 .name_wrap .name {font-size:1.35em;}
 .name_wrap .and {display:inline-block; margin:6% 0%;}
 .name_wrap .line {display:inline-block; background:#666; width:23%; height:1px; vertical-align:middle;}
-.main_image {width:100%; height:38%; margin-bottom:5%; overflow:hidden; text-align:center; display:flex; flex-direction:column; justify-content:flex-end;}
+.main_image {width:100%; height:38%; margin-bottom:10%; overflow:hidden; text-align:center; display:flex; flex-direction:column; justify-content:flex-end;}
 .page[data-page="1"] .main_image {height:46%;}
 .page[data-page="1"] .main_image img {height:100%; width:auto;}
 .main_image img {width:100%; height:auto;}
@@ -63,6 +63,14 @@ html, body {margin:0 auto; padding:0 auto; width:100%; height:100%; font-size:1e
 .photo_wrap .photo_line .photo img{width:100%; height:100%; cursor:pointer;}
 #selectedPhoto {background:rgba(200,200,200, .75); position:absolute; width:100%; height:100%; z-index:99; display:flex; flex-direction:column; justify-content:center; display:none;}
 #selectedPhoto img {width:100%; height:auto;}
+
+
+/* page 4 */
+.week {}
+.week .tit, .week .date {font-weight:bold; display:flex; flex-direction:row; justify-content:space-between; text-align:center; }
+.week .date {text-align:right; align-content: space-between;}
+.week .date div {min-width:10%; position:relative;}
+#dDate{display:inline-block; border:2px solid #F00; border-radius:50%; position:absolute; width:80%; height:80%; top:0px; left:33%}
 
 #map {border:1px solid #000; height:85%;}
 .link a {font-weight:bold; color:#000; }

@@ -6,7 +6,7 @@ $(() => {
   const MAX_PAGE = $('#content .page').length;
   const APPKEY = '5375ce90a3391fd48845519304e83309';
   let PAGE = 1;
-  
+
 
   wedding = {
     ready() {
@@ -25,6 +25,20 @@ $(() => {
         this.swiper();
         this.naverMap();
         this.kakaotalk();
+        this.dDay();
+        this.sakura();
+      },
+
+      sakura() {
+        $('body').sakura();
+      },
+
+      dDay() {
+        const today = new Date();
+        const dDay = new Date(2020, 7, 29);
+        var diff = parseInt((dDay - today) / (24*60*60*1000));
+
+        $('#dDay').text(`D - ${diff}`);
       },
 
       kakaotalk() {
