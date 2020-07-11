@@ -78,7 +78,7 @@ $(() => {
 
                 // 인포윈도우로 장소에 대한 설명을 표시합니다
                 var infowindow = new kakao.maps.InfoWindow({
-                    content: '<h4> [MJ 컨벤션 5층 파티오홀] </h4><a href="http://mjcon.co.kr/?module=Html&action=SiteComp&sSubNo=2" target="_blank"><img src="image/logo.png"></a>'
+                    content: '<b> [MJ 컨벤션 5층 파티오홀] </b><a href="http://mjcon.co.kr/?module=Html&action=SiteComp&sSubNo=2" target="_blank"><img style="width:45%;" src="image/logo.png"></a>'
                 });
                 infowindow.open(map, marker);
 
