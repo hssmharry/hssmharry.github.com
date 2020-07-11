@@ -79,7 +79,7 @@ $(() => {
                     'image/logo.png',
                     new kakao.maps.Size(31, 35), new kakao.maps.Point(13, 34));
                 marker.setImage(markerImage);
-                maker.setTitle(`[MJ 컨벤션]<br>5층 파티오홀`);
+                marker.setTitle(`[MJ 컨벤션]<br>5층 파티오홀`);
 
                 // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
                 map.setCenter(coords);
