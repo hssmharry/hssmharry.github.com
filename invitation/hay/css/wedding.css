@@ -17,6 +17,8 @@ html, body {margin:0 auto; padding:0 auto; width:100%; height:100%; font-size:1e
 .content_text.white {background:rgba(255,255,255, 0.38);}
 .content_text .text {width:100%; font-size:0.9em; line-height:1.65em;}
 .content_text.large .text{font-size:1em;}
+.content_text .img {width:100%; margin-bottom:6%;}
+.content_text .img img {width:100%;}
 
 /* page 1 */
 .content_wrap {width:100%; height:35%; display:flex; justify-content:center;}
