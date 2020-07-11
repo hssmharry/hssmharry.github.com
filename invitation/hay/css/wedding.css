@@ -72,6 +72,7 @@ html, body {margin:0 auto; padding:0 auto; width:100%; height:100%; font-size:1e
 .week .date div {min-width:10%; position:relative;}
 #dDate{display:inline-block; border:2px solid #F00; border-radius:50%; position:absolute; width:80%; height:80%; top:0px; left:33%}
 
+#mapContent {height:100%;}
 #map {border:1px solid #000; height:85%;}
 .link a {font-weight:bold; color:#000; }
 
