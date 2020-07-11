@@ -75,16 +75,11 @@ $(() => {
                     map: map,
                     position: coords
                 });
-                var markerImage = new kakao.maps.MarkerImage(
-                    'image/logo.png',
-                    new kakao.maps.Size(31, 35), new kakao.maps.Point(13, 34));
-
-                // marker.setImage(markerImage);
-                marker.setTitle(`[MJ 컨벤션] 5층 파티오홀`);
-                marker.setVisible(true);
 
                 // 인포윈도우로 장소에 대한 설명을 표시합니다
-                var infowindow = new kakao.maps.InfoWindow({});
+                var infowindow = new kakao.maps.InfoWindow({
+                    content: '<a style="font-size:0.75em; font-family:-webkit-body; font-weight:bold; color:#000;" href="http://mjcon.co.kr/?module=Html&action=SiteComp&sSubNo=2" target="_blank"> [MJ 컨벤션]<br>5층 파티오홀</a>'
+                });
                 infowindow.open(map, marker);
 
                 // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
