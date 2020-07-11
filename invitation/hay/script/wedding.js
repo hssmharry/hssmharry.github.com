@@ -79,8 +79,9 @@ $(() => {
                     'image/logo.png',
                     new kakao.maps.Size(31, 35), new kakao.maps.Point(13, 34));
 
-                marker.setImage(markerImage);
+                // marker.setImage(markerImage);
                 marker.setTitle(`[MJ 컨벤션] 5층 파티오홀`);
+                marker.setVisible(true);
 
                 // 인포윈도우로 장소에 대한 설명을 표시합니다
                 var infowindow = new kakao.maps.InfoWindow({});
