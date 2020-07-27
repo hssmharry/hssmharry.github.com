@@ -63,7 +63,7 @@ $(() => {
         var geocoder = new kakao.maps.services.Geocoder();
 
         // 주소로 좌표를 검색합니다
-        geocoder.addressSearch('경기도 부천시 소사구 소사본동 65-7', function(result, status) {
+        geocoder.addressSearch('서울 강남구 언주로 508 공무원연금공단', function(result, status) {
 
             // 정상적으로 검색이 완료됐으면
              if (status === kakao.maps.services.Status.OK) {
@@ -77,10 +77,10 @@ $(() => {
                 });
 
                 // 인포윈도우로 장소에 대한 설명을 표시합니다
-                var infowindow = new kakao.maps.InfoWindow({
-                    content: '<a style="font-size:0.75em; font-family:-webkit-body; font-weight:bold; color:#000;" href="http://mjcon.co.kr/?module=Html&action=SiteComp&sSubNo=2" target="_blank"> [MJ 컨벤션]<br>5층 파티오홀</a>'
-                });
-                infowindow.open(map, marker);
+                // var infowindow = new kakao.maps.InfoWindow({
+                //     content: '<a style="font-size:0.75em; font-family:-webkit-body; font-weight:bold; color:#000;" href="http://mjcon.co.kr/?module=Html&action=SiteComp&sSubNo=2" target="_blank"> [MJ 컨벤션]<br>5층 파티오홀</a>'
+                // });
+                // infowindow.open(map, marker);
 
                 // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
                 map.setCenter(coords);
