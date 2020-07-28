@@ -1,4 +1,4 @@
-html, body {background-color:#666; background-image:image('image/bg.jpg'); margin:0 auto; padding:0 auto; width:100%; height:100%; font-size:1em; font-family: 'Nanum Myeongjo', serif; color:#666; display:flex; justify-content:center}
+html, body {background-image:url('../image/bg.jpg'); margin:0 auto; padding:0 auto; width:100%; height:100%; font-size:1em; font-family: 'Nanum Myeongjo', serif; color:#666; display:flex; justify-content:center}
 #container {background-color:#FFF; position:relative; width:100%; max-width:750px; height:100%; display:flex; flex-direction:column; justify-content:space-between; text-align:center;}
 #header {width:100%; height:50px;}
 #content {width:100%; height:93%; display:flex; flex-direction:row; justify-content:space-between; align-content: center;}
@@ -33,8 +33,7 @@ html, body {background-color:#666; background-image:image('image/bg.jpg'); margi
 .main_image img {width:100%; height:auto; position:absolute; top:0;}
 .page[data-page="1"] .main_image {height:46%;}
 .page[data-page="2"] .main_image {margin-bottom:5%;}
-.page[data-page="1"] .main_image img {width:100%; }
-.page[data-page="2"] .main_image img {width:120%; height:123%; margin-left:-10%;}
+.page[data-page="1"] .main_image img {width:100%; top:-3%;}
 .right_wrap {width:90%; text-align:right;}
 
 /* page 2 */
@@ -78,7 +77,9 @@ html, body {background-color:#666; background-image:image('image/bg.jpg'); margi
 .week .date div {min-width:10%; position:relative;}
 .week .date div.white {color:#FFF;}
 #dDay {font-size:1.8em;}
-#dDate {display:inline-block; position:absolute; width:80%; height:80%; top:0px; left:17%; color:#FF7777; font-weight:bold; font-size:2.8em; z-index:-1;}
+/* #dDate {display:inline-block; position:absolute; width:80%; height:80%; top:0px; left:17%; color:#FF7777; font-weight:bold; font-size:2.8em; z-index:-1;} */
+#dDate {color:#FF8833;}
+#dDate img {display:inline-block; position:absolute; width:120%; height:150%; top:-26%; left:16%; z-index:-1;}
 
 #mapContent {height:100%;}
 #map {border:1px solid #000; height:100%;}
