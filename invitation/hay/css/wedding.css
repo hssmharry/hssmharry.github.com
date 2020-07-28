@@ -1,5 +1,5 @@
-html, body {margin:0 auto; padding:0 auto; width:100%; height:100%; font-size:1em; font-family: 'Nanum Myeongjo', serif; color:#666; display:flex; justify-content:center}
-#container {position:relative; width:100%; max-width:850px; height:100%; display:flex; flex-direction:column; justify-content:space-between; text-align:center;}
+html, body {background-color:#666; background-image:image('image/bg.jpg'); margin:0 auto; padding:0 auto; width:100%; height:100%; font-size:1em; font-family: 'Nanum Myeongjo', serif; color:#666; display:flex; justify-content:center}
+#container {background-color:#FFF; position:relative; width:100%; max-width:750px; height:100%; display:flex; flex-direction:column; justify-content:space-between; text-align:center;}
 #header {width:100%; height:50px;}
 #content {width:100%; height:93%; display:flex; flex-direction:row; justify-content:space-between; align-content: center;}
 #footer {width:100%; height:7%; display:flex; justify-content:center; align-items:center;}
@@ -43,7 +43,7 @@ html, body {margin:0 auto; padding:0 auto; width:100%; height:100%; font-size:1e
 .line_wrap {width:100%; text-align:center; margin-top:5%;}
 .line_wrap .line {display:inline-block; width:13%; background:#666; height:2px;}
 .page[data-page="2"] .content_text .text {font-size:0.8em;}
-#profile_table {margin-top:6%; width:100%; padding-top:2%;}
+#profile_table {margin-top:6%; width:100%; padding-top:2%; margin-bottom:10%;}
 #profile_table td {font-size:0.9em; text-align:center;}
 #profile_table .parents {text-align:right; font-size:1.2em;}
 #profile_table .name {font-size:1.15em; text-align:left;}
@@ -76,7 +76,9 @@ html, body {margin:0 auto; padding:0 auto; width:100%; height:100%; font-size:1e
 .week .tit, .week .date {font-weight:bold; display:flex; flex-direction:row; justify-content:space-between; text-align:center; }
 .week .date {text-align:right; align-content: space-between;}
 .week .date div {min-width:10%; position:relative;}
-#dDate {display:inline-block; border:2px solid #F00; border-radius:50%; position:absolute; width:80%; height:80%; top:0px; left:33%}
+.week .date div.white {color:#FFF;}
+#dDay {font-size:1.8em;}
+#dDate {display:inline-block; position:absolute; width:80%; height:80%; top:0px; left:17%; color:#FF7777; font-weight:bold; font-size:2.8em; z-index:-1;}
 
 #mapContent {height:100%;}
 #map {border:1px solid #000; height:100%;}
