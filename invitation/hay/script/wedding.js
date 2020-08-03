@@ -190,7 +190,7 @@ $(() => {
         content: {
             title: '김영진 & 한아영 결혼합니다',
             description: '2020-08-30 (일) 12:20',
-            imageUrl: 'https://hssmharry.github.io/invitation/hay/image/hello.jpg',
+            imageUrl: 'image/hello.jpg',
             link: {
               mobileWebUrl: 'https://hssmharry.github.io/invitation/hay/index.html',
               webUrl: 'https://hssmharry.github.io/invitation/hay/index.html'
@@ -199,7 +199,7 @@ $(() => {
           buttons: [
             {
               title: '청첩장 보러가기',
-              imageUrl: 'https://hssmharry.github.io/invitation/hay/image/hello.jpg',
+              imageUrl: 'image/hello.jpg',
               link: {
                 mobileWebUrl: 'https://hssmharry.github.io/invitation/hay/index.html',
                 webUrl: 'https://hssmharry.github.io/invitation/hay/index.html'
