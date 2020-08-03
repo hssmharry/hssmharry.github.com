@@ -188,20 +188,21 @@ $(() => {
       Kakao.Link.sendDefault({
         objectType: 'feed',
         content: {
-            title: '이태훈 & 김주연 결혼합니다',
-            description: '2018-11-10 (토) 12:30',
-            imageUrl: 'image/1.jpg',
+            title: '김영진 & 한아영 결혼합니다',
+            description: '2020-08-30 (일) 12:20',
+            imageUrl: 'https://hssmharry.github.io/invitation/hay/image/hello.jpg',
             link: {
-              mobileWebUrl: 'https://hssmharry.github.io/invitation/kjy/index.html',
-              webUrl: 'https://hssmharry.github.io/invitation/kjy/index.html'
+              mobileWebUrl: 'https://hssmharry.github.io/invitation/hay/index.html',
+              webUrl: 'https://hssmharry.github.io/invitation/hay/index.html'
             }
           },
           buttons: [
             {
               title: '청첩장 보러가기',
+              imageUrl: 'https://hssmharry.github.io/invitation/hay/image/hello.jpg',
               link: {
-                mobileWebUrl: 'https://hssmharry.github.io/invitation/kjy/index.html',
-                webUrl: 'https://hssmharry.github.io/invitation/kjy/index.html'
+                mobileWebUrl: 'https://hssmharry.github.io/invitation/hay/index.html',
+                webUrl: 'https://hssmharry.github.io/invitation/hay/index.html'
               }
             }
           ]
