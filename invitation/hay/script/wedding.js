@@ -199,7 +199,6 @@ $(() => {
           buttons: [
             {
               title: '청첩장 보러가기',
-              imageUrl: 'image/hello.jpg',
               link: {
                 mobileWebUrl: 'https://hssmharry.github.io/invitation/hay/index.html',
                 webUrl: 'https://hssmharry.github.io/invitation/hay/index.html'
