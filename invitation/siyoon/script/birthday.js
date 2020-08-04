@@ -64,25 +64,25 @@ $(() => {
           }
         });
       },
+    },
 
-      kakaoNavi() {
-        // 주소-좌표 변환 객체를 생성합니다
-        var geocoder = new kakao.maps.services.Geocoder();
+    kakaoNavi() {
+      // 주소-좌표 변환 객체를 생성합니다
+      var geocoder = new kakao.maps.services.Geocoder();
 
-        // 주소로 좌표를 검색합니다
-        geocoder.addressSearch('경기 부천시 부일로 223 투나빌딩 지하 1층', function(result, status) {
+      // 주소로 좌표를 검색합니다
+      geocoder.addressSearch('경기 부천시 부일로 223 투나빌딩 지하 1층', function(result, status) {
 
-            // 정상적으로 검색이 완료됐으면
-             if (status === kakao.maps.services.Status.OK) {
-                Kakao.Navi.start({
-                    name: "연 그리다 뷔페하우스",
-                    x: result[0].x,
-                    y: result[0].y,
-                    coordType: 'wgs84'
-                });
-            }
-        });
-      }
+          // 정상적으로 검색이 완료됐으면
+           if (status === kakao.maps.services.Status.OK) {
+              Kakao.Navi.start({
+                  name: "연 그리다 뷔페하우스",
+                  x: result[0].x,
+                  y: result[0].y,
+                  coordType: 'wgs84'
+              });
+          }
+      });
     },
 
     adressSearch(map) {
@@ -129,13 +129,16 @@ $(() => {
       },
 
       sns(e) {
-        const telNum = $(e.target).parents('td').data('tel');
+        const telNum = $(e.target).data('target') || $(e.target).parents('td').data('tel');
         const type = $(e.target).data('type');
 
         switch(type) {
           case 'kakaotalk':
             birthday.kakaotalk();
             break;
+          case 'navi':
+            birthday.kakaoNavi();
+          break;
           case 'tel':
             location.href = `tel:${telNum}`;
             break;
