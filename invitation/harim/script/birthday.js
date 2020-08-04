@@ -15,7 +15,7 @@ $(() => {
     event() {
       $('#content').on('click', '.photo', $.proxy(birthday.click.photo, this));
       $('#content').on('click', '#selectedPhoto', $.proxy(birthday.click.selectedPhoto, this));
-      $('#content').on('click', '.sns_icon img, .sns_icon b, .icon', $.proxy(birthday.click.sns, this));
+      $('#content').on('click', '.sns_icon img, .icon', $.proxy(birthday.click.sns, this));
     },
 
     init: {
@@ -23,7 +23,7 @@ $(() => {
         this.kakaotalk();
         this.dDay();
         this.kakaoMap();
-        this.kakaoProfile();
+        // this.kakaoProfile();
       },
 
       kakaotalk() {
