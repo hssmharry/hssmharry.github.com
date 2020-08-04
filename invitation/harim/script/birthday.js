@@ -163,7 +163,7 @@ $(() => {
         objectType: 'feed',
         content: {
             title: '이하림 첫 생일잔치에 초대합니다.',
-            description: '2020.09.05 18:30',
+            description: '2020.08.15 18:30',
             imageUrl: 'https://hssmharry.github.io/invitation/harim/image/main.jpg',
             link: {
               mobileWebUrl: 'https://hssmharry.github.io/invitation/harim/index.html',
