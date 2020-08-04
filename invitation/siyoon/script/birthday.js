@@ -83,7 +83,7 @@ $(() => {
 
               // 인포윈도우로 장소에 대한 설명을 표시합니다
               var infowindow = new kakao.maps.InfoWindow({
-                  content: '<a style="font-size:0.75em; font-family:-webkit-body; font-weight:bold; color:#000;" href="http://mjcon.co.kr/?module=Html&action=SiteComp&sSubNo=2" target="_blank"> [MJ 컨벤션]<br>5층 파티오홀</a>'
+                  content: '연 그리다 뷔페하우스<br>수피아홀'
               });
               infowindow.open(map, marker);
 
