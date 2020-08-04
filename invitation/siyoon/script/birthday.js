@@ -163,7 +163,7 @@ $(() => {
         content: {
             title: '김시윤 첫 생일잔치에 초대합니다.',
             description: '2020.09.05 18:30',
-            imageUrl: 'image/main.jpg',
+            imageUrl: 'https://hssmharry.github.io/invitation/siyoon/image/main.jpg',
             link: {
               mobileWebUrl: 'https://hssmharry.github.io/invitation/siyoon/index.html',
               webUrl: 'https://hssmharry.github.io/invitation/siyoon/index.html'

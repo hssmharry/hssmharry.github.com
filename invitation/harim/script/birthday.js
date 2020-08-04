@@ -162,20 +162,20 @@ $(() => {
       Kakao.Link.sendDefault({
         objectType: 'feed',
         content: {
-            title: '김시윤 첫 생일잔치에 초대합니다.',
+            title: '이하림 첫 생일잔치에 초대합니다.',
             description: '2020.09.05 18:30',
-            imageUrl: 'image/main.jpg',
+            imageUrl: 'https://hssmharry.github.io/invitation/harim/image/main.jpg',
             link: {
-              mobileWebUrl: 'https://hssmharry.github.io/invitation/siyoon/index.html',
-              webUrl: 'https://hssmharry.github.io/invitation/siyoon/index.html'
+              mobileWebUrl: 'https://hssmharry.github.io/invitation/harim/index.html',
+              webUrl: 'https://hssmharry.github.io/invitation/harim/index.html'
             }
           },
           buttons: [
             {
               title: '초대장 보러가기',
               link: {
-                mobileWebUrl: 'https://hssmharry.github.io/invitation/siyoon/index.html',
-                webUrl: 'https://hssmharry.github.io/invitation/siyoon/index.html'
+                mobileWebUrl: 'https://hssmharry.github.io/invitation/harim/index.html',
+                webUrl: 'https://hssmharry.github.io/invitation/harim/index.html'
               }
             }
           ]
