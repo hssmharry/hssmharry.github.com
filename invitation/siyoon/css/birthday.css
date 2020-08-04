@@ -29,7 +29,11 @@ table {width:100%; margin: 20% 0 15% 0;}
 #calander th {height:45px; line-height:45px;}
 #calander td {text-align:center; height:35px; line-height:35px; position:relative;}
 
-#map {width:100%; height:300px;}
+#map {width:100%; height:300px; margin-top:10%;}
+
+.icon_text {line-height:35px; margin-bottom:15%; margin-top:-5%;}
+.icon {display:inline-block;}
+.icon img {width:35px; height:35px; line-height:35px; vertical-align: middle;}
 
 .content_photo {text-align:center;}
 .content_photo img {width:80%; margin-top:5%;}
