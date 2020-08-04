@@ -1,0 +1,33 @@
+html, body {margin:0 auto; padding:0 auto; width:100%; height:100%; font-size:1em; font-family: 'Nanum Gothic', serif; color:#666; display:flex; justify-content:center}
+#container {position:relative; width:100%; max-width:850px; height:100%; display:flex; flex-direction:column; justify-content:space-between; text-align:center;}
+#header {width:100%; height:50px;}
+#content {width:90%; height:90%; margin:5% 5%; font-size:0.85em; line-height:2.5em; font-weight:bold; display:flex; flex-direction:column; justify-content:space-between; align-content: center;}
+#footer {width:100%; height:7%; display:flex; justify-content:center; align-items:center;}
+
+.content {text-align:center; width:100%; margin:10% 0% 10% 0%;}
+.content_text {}
+.text_right {text-align:right;}
+.text_left {text-align:left;}
+.text_center {text-align:center;}
+.text_green {color:#8bba7c;}
+.text_white {color:#FFF;}
+.text_large {font-size:1.2em;}
+.text_m {font-family: 'Nanum Myeongjo', serif;}
+.title {font-family: 'Nanum Myeongjo', serif; color:#8bba7c; font-size: 1.3em; margin-bottom:2%;}
+
+.sns_icon img {width:20px; height:20px; margin:3px;}
+
+#main_image {width:100%; vertical-align:middle;}
+#main_text {margin:20% 0% 20% 0%; padding:5%; border-left:solid; border-color: #8bba7c;}
+#dDay {font-size:1.7em; margin:5% 0 15% 0;}
+#dDate {top:0; left:7; width:37px; height:37px; display:inline-block; position:absolute; border-radius: 50%; background-color:#8bba7c; z-index:-1;}
+#map {margin-bottom:20%;}
+
+img.leaf {width:38%; height:2%; margin-bottom:10%;}
+table {width:100%; margin: 20% 0 30% 0;}
+#calander {font-size:1em; margin-top:5%;}
+#calander th {height:45px; line-height:45px;}
+#calander td {text-align:center; height:35px; line-height:35px; position:relative;}
+
+.content_photo {text-align:center;}
+.content_photo img {width:80%; margin-top:5%;}
