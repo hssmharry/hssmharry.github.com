@@ -64,36 +64,8 @@ $(() => {
           }
         });
       },
+  },
 
-    adressSearch(map) {
-      // 주소-좌표 변환 객체를 생성합니다
-      var geocoder = new kakao.maps.services.Geocoder();
-
-      // 주소로 좌표를 검색합니다
-      geocoder.addressSearch('경기 부천시 길주로 71 리파인빌 3층', function(result, status) {
-
-          // 정상적으로 검색이 완료됐으면
-           if (status === kakao.maps.services.Status.OK) {
-
-              var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
-
-              // 결과값으로 받은 위치를 마커로 표시합니다
-              var marker = new kakao.maps.Marker({
-                  map: map,
-                  position: coords
-              });
-
-              // 인포윈도우로 장소에 대한 설명을 표시합니다
-              var infowindow = new kakao.maps.InfoWindow({
-                  content: '드마리스 부천점<br>베네홀'
-              });
-              infowindow.open(map, marker);
-
-              // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
-              map.setCenter(coords);
-          }
-      });
-    },
 
     click: {
       photo(e) {
@@ -129,24 +101,53 @@ $(() => {
       }
     },
 
-    kakaoNavi() {
-      // 주소-좌표 변환 객체를 생성합니다
-      var geocoder = new kakao.maps.services.Geocoder();
+  adressSearch(map) {
+  // 주소-좌표 변환 객체를 생성합니다
+  var geocoder = new kakao.maps.services.Geocoder();
 
-      // 주소로 좌표를 검색합니다
-      geocoder.addressSearch('경기 부천시 길주로 71 리파인빌 3층', function(result, status) {
+  // 주소로 좌표를 검색합니다
+  geocoder.addressSearch('경기 부천시 길주로 71 리파인빌 3층', function(result, status) {
 
-          // 정상적으로 검색이 완료됐으면
-           if (status === kakao.maps.services.Status.OK) {
-              Kakao.Navi.start({
-                  name: "드마리스 부천점",
-                  x: result[0].x,
-                  y: result[0].y,
-                  coordType: 'wgs84'
-              });
-          }
-      });
-    }
+      // 정상적으로 검색이 완료됐으면
+       if (status === kakao.maps.services.Status.OK) {
+
+          var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+
+          // 결과값으로 받은 위치를 마커로 표시합니다
+          var marker = new kakao.maps.Marker({
+              map: map,
+              position: coords
+          });
+
+          // 인포윈도우로 장소에 대한 설명을 표시합니다
+          var infowindow = new kakao.maps.InfoWindow({
+              content: '드마리스 부천점<br>베네홀'
+          });
+          infowindow.open(map, marker);
+
+          // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+          map.setCenter(coords);
+      }
+  });
+  },
+
+  kakaoNavi() {
+    // 주소-좌표 변환 객체를 생성합니다
+    var geocoder = new kakao.maps.services.Geocoder();
+
+    // 주소로 좌표를 검색합니다
+    geocoder.addressSearch('경기 부천시 길주로 71 리파인빌 3층', function(result, status) {
+
+        // 정상적으로 검색이 완료됐으면
+         if (status === kakao.maps.services.Status.OK) {
+            Kakao.Navi.start({
+                name: "드마리스 부천점",
+                x: result[0].x,
+                y: result[0].y,
+                coordType: 'wgs84'
+            });
+        }
+    });
   },
 
     kakaotalk() {

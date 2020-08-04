@@ -17,7 +17,7 @@ html, body {margin:0 auto; padding:0 auto; width:100%; height:100%; font-size:1e
 .title img {width:26px; height:26px; vertical-align:-5; margin:0px 10px;}
 
 .sns_icon {font-size:0.8em; }
-.sns_icon img {width:20px; height:20px; margin:3px; vertical-align:middle;}
+.sns_icon img {width:20px; height:20px; margin:3px; vertical-align:middle; cursor:pointer;}
 
 #main_image {width:100%; vertical-align:middle;}
 #main_text {margin:20% 0% 20% 0%; padding:5%; border-left:solid; border-left-width:5px; border-color: #e84f52;}
