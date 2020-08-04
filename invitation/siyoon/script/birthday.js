@@ -23,6 +23,7 @@ $(() => {
         this.kakaotalk();
         this.dDay();
         this.kakaoMap();
+        this.kakaoProfile();
       },
 
       kakaotalk() {
@@ -48,6 +49,18 @@ $(() => {
 
         birthday.adressSearch(map);
       },
+
+      kakaoProfile() {
+        Kakao.API.request({
+          url: '/v1/api/talk/profile',
+          success: function(response) {
+            console.log('1   :   ' + response);
+          },
+          fail: function(error) {
+            console.log('2   :   ' + error);
+          }
+        });
+      }
     },
 
     adressSearch(map) {
@@ -69,10 +82,10 @@ $(() => {
               });
 
               // 인포윈도우로 장소에 대한 설명을 표시합니다
-              // var infowindow = new kakao.maps.InfoWindow({
-              //     content: '<a style="font-size:0.75em; font-family:-webkit-body; font-weight:bold; color:#000;" href="http://mjcon.co.kr/?module=Html&action=SiteComp&sSubNo=2" target="_blank"> [MJ 컨벤션]<br>5층 파티오홀</a>'
-              // });
-              // infowindow.open(map, marker);
+              var infowindow = new kakao.maps.InfoWindow({
+                  content: '<a style="font-size:0.75em; font-family:-webkit-body; font-weight:bold; color:#000;" href="http://mjcon.co.kr/?module=Html&action=SiteComp&sSubNo=2" target="_blank"> [MJ 컨벤션]<br>5층 파티오홀</a>'
+              });
+              infowindow.open(map, marker);
 
               // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
               map.setCenter(coords);
