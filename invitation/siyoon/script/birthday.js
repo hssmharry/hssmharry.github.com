@@ -3,7 +3,7 @@
  */
 
 $(() => {
-  const APPKEY = '5375ce90a3391fd48845519304e83309';
+  const APPKEY = 'aff992768330b03a2195be240c98fde9';
 
 
   birthday = {
@@ -52,6 +52,9 @@ $(() => {
 
       kakaoProfile() {
         Kakao.API.request({
+          headers: {
+            Authorization: ''
+          },
           url: '/v1/api/talk/profile',
           success: function(response) {
             console.log('1   :   ' + response);
