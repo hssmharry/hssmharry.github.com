@@ -13,7 +13,7 @@ html, body {margin:0 auto; padding:0 auto; width:100%; height:100%; font-size:1e
 .text_white {color:#FFF;}
 .text_large {font-size:1.2em;}
 .text_m {font-family: 'Nanum Myeongjo', serif;}
-.title {font-family: 'Nanum Myeongjo', serif; color:#8bba7c; font-size: 1.3em; margin-bottom:10px; padding-top:10%; border-top:solid; border-width:1px;}
+.title {font-family: 'Nanum Myeongjo', serif; color:#8bba7c; font-size: 1.3em; margin-bottom:10px; padding-top:10%; border-top:dashed; border-width:1px;}
 
 .sns_icon {font-size:0.8em; }
 .sns_icon img {width:20px; height:20px; margin:3px; vertical-align:middle; cursor:pointer;}
@@ -38,3 +38,4 @@ table {width:100%; margin: 20% 0 15% 0;}
 
 .content_photo {text-align:center;}
 .content_photo img {width:80%; margin-top:5%;}
+.content_photo .mini img {width:40%;}
