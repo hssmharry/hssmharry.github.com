@@ -186,7 +186,7 @@ $(() => {
     },
 
     openKakaoMap() {
-      location.href = `https://map.kakao.com/link/to/드마리스 부천점,${x},${y}`;
+      location.href = `http://kko.to/mQ6wYMzDj`;
     }
   };
 

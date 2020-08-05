@@ -161,7 +161,7 @@ $(() => {
     },
 
     openKakaoMap() {
-      location.href = `https://map.kakao.com/link/to/연그리다 뷔페하우스,${x},${y}`;
+      location.href = `http://kko.to/Yip6DM-Y0`;
     }
   };
 
