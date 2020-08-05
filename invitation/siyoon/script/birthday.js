@@ -23,7 +23,6 @@ $(() => {
         this.kakaotalk();
         this.dDay();
         this.kakaoMap();
-        // this.kakaoProfile();
       },
 
       kakaotalk() {
@@ -49,21 +48,6 @@ $(() => {
 
         birthday.adressSearch(map);
       },
-
-      kakaoProfile() {
-        Kakao.API.request({
-          headers: {
-            Authorization: ''
-          },
-          url: '/v1/api/talk/profile',
-          success: function(response) {
-            console.log('1   :   ' + response);
-          },
-          fail: function(error) {
-            console.log('2   :   ' + error);
-          }
-        });
-      },
     },
 
     kakaoNavi() {
@@ -79,7 +63,13 @@ $(() => {
                   name: "연 그리다 뷔페하우스",
                   x: result[0].x,
                   y: result[0].y,
-                  coordType: 'wgs84'
+                  coordType: 'wgs84',
+                  rpOption: 100,
+                  viaPoints: [{
+                    name: 'test',
+                    x:result[0].x,
+                    y:result[0].y
+                  }]
               });
           }
       });
