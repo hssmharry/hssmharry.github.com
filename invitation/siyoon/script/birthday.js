@@ -55,15 +55,9 @@ $(() => {
     kakaoNavi() {
       Kakao.Navi.start({
           name: "연 그리다 뷔페하우스",
-          x: x,
-          y: y,
+          x: Number(x),
+          y: Number(y),
           coordType: 'wgs84',
-          rpOption: 100,
-          viaPoints: [{
-            name: 'test',
-            x: x,
-            y: y
-          }]
       });
     },
 
