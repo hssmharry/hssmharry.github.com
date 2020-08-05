@@ -3,7 +3,9 @@
  */
 
 $(() => {
-  const APPKEY = '5375ce90a3391fd48845519304e83309';
+  const APPKEY = {KAKAO:'5375ce90a3391fd48845519304e83309', SK:''};
+  var x = 0;
+  var y = 0;
 
 
   birthday = {
@@ -26,7 +28,7 @@ $(() => {
       },
 
       kakaotalk() {
-         Kakao.init(APPKEY);
+         Kakao.init(APPKEY.KAKAO);
       },
 
       dDay() {
@@ -51,27 +53,17 @@ $(() => {
     },
 
     kakaoNavi() {
-      // 주소-좌표 변환 객체를 생성합니다
-      var geocoder = new kakao.maps.services.Geocoder();
-
-      // 주소로 좌표를 검색합니다
-      geocoder.addressSearch('경기 부천시 부일로 223 투나빌딩 지하 1층', function(result, status) {
-
-          // 정상적으로 검색이 완료됐으면
-           if (status === kakao.maps.services.Status.OK) {
-              Kakao.Navi.start({
-                  name: "연 그리다 뷔페하우스",
-                  x: result[0].x,
-                  y: result[0].y,
-                  coordType: 'wgs84',
-                  rpOption: 100,
-                  viaPoints: [{
-                    name: 'test',
-                    x:result[0].x,
-                    y:result[0].y
-                  }]
-              });
-          }
+      Kakao.Navi.start({
+          name: "연 그리다 뷔페하우스",
+          x: x,
+          y: y,
+          coordType: 'wgs84',
+          rpOption: 100,
+          viaPoints: [{
+            name: 'test',
+            x: x,
+            y: y
+          }]
       });
     },
 
@@ -86,6 +78,8 @@ $(() => {
            if (status === kakao.maps.services.Status.OK) {
 
               var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+              x = result[0].x;
+              y = result[0].y;
 
               // 결과값으로 받은 위치를 마커로 표시합니다
               var marker = new kakao.maps.Marker({
@@ -129,6 +123,9 @@ $(() => {
           case 'navi':
             birthday.kakaoNavi();
           break;
+          case 'map':
+            birthday.openKakaoMap();
+          break;
           case 'tel':
             location.href = `tel:${telNum}`;
             break;
@@ -140,14 +137,6 @@ $(() => {
     },
 
     kakaotalk() {
-      // Kakao.Link.sendCustom({
-      //   templateId: ,
-      //   templateArgs: {
-      //     'title': '이태훈 & 김주연 결혼합니다',
-      //     'description': '2018-11-10 (토) 12:30'
-      //   }
-      // });
-
       Kakao.Link.sendDefault({
         objectType: 'feed',
         content: {
@@ -169,6 +158,10 @@ $(() => {
             }
           ]
         });
+    },
+
+    openKakaoMap() {
+      location.href = `https://map.kakao.com/link/map/${x},${y}`;
     }
   };
 
