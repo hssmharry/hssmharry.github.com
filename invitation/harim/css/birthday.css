@@ -22,7 +22,7 @@ html, body {margin:0 auto; padding:0 auto; width:100%; height:100%; font-size:1e
 #main_image {width:100%; vertical-align:middle;}
 #main_text {margin:20% 0% 20% 0%; padding:5%; border-left:solid; border-left-width:5px; border-color: #e84f52;}
 #dDay {font-size:1.7em; margin:5% 0 15% 0;}
-#dDate {top:0; left:5px; width:36px; height:36px; display:inline-block; position:absolute; border-radius: 50%; background-color:#8bba7c; z-index:-1;}
+#dDate {top:0; left:5px; width:36px; height:36px; display:inline-block; position:absolute; border-radius: 50%; background-color:#e84f52; z-index:-1;}
 #map {margin-bottom:20%;}
 
 img.leaf {width:150px; height:36px; margin-bottom:10%;}
