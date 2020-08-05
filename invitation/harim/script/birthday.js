@@ -162,7 +162,7 @@ $(() => {
       //   }
       // });
 
-      Kakao.Link.sendDefault({+
+      Kakao.Link.sendDefault({
         objectType: 'feed',
         content: {
             title: '이하림 첫 생일잔치에 초대합니다.',
