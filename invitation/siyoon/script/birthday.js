@@ -4,8 +4,8 @@
 
 $(() => {
   const APPKEY = {KAKAO:'5375ce90a3391fd48845519304e83309', SK:''};
-  var x = 0;
-  var y = 0;
+  var xxx = 0;
+  var yyy = 0;
 
 
   birthday = {
@@ -161,7 +161,7 @@ $(() => {
     },
 
     openKakaoMap() {
-      location.href = `https://map.kakao.com/link/map/${x},${y}`;
+      location.href = `https://map.kakao.com/link/to/연그리다 뷔페하우스,${x},${y}`;
     }
   };
 

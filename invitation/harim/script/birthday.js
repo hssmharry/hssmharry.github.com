@@ -29,7 +29,7 @@ $(() => {
       },
 
       kakaotalk() {
-         Kakao.init(APPKEY);
+         Kakao.init(APPKEY.KAKAO);
       },
 
       dDay() {
@@ -186,7 +186,7 @@ $(() => {
     },
 
     openKakaoMap() {
-      location.href = `https://map.kakao.com/link/map/${x},${y}`;
+      location.href = `https://map.kakao.com/link/to/드마리스 부천점,${x},${y}`;
     }
   };
 
