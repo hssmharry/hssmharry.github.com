@@ -41,7 +41,7 @@ html, body {background-image:url('../image/bg.jpg'); margin:0 auto; padding:0 au
 .content_title span {padding:3% 5%; font-weight:bold; margin-bottom:8%; display:inline-block; border-top:2.5px solid #666; border-bottom:1px solid #666;}
 .line_wrap {width:100%; text-align:center; margin-top:5%;}
 .line_wrap .line {display:inline-block; width:13%; background:#666; height:2px;}
-.page[data-page="2"] .content_text .text {font-size:0.7em;}
+.page[data-page="2"] .content_text .text {font-size:0.65em;}
 #profile_table {margin-top:6%; width:100%; padding-top:2%; margin-bottom:10%;}
 #profile_table td {font-size:0.9em; text-align:center;}
 #profile_table .parents {text-align:right; font-size:1.2em;}
