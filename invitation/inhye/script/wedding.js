@@ -7,6 +7,8 @@ $(() => {
   const APPKEY = '5375ce90a3391fd48845519304e83309';
   const _ADRESS = '경기도 부천시 소사구 소사본동 65-7';
   let PAGE = 1;
+  let x = 0;
+  let y = 0;
 
 
   wedding = {
@@ -18,7 +20,7 @@ $(() => {
     event() {
       $('#content').on('click', '.photo', $.proxy(wedding.click.photo, this));
       $('#content').on('click', '#selectedPhoto', $.proxy(wedding.click.selectedPhoto, this));
-      $('#content').on('click', '.sns_icon img, .sns_icon b', $.proxy(wedding.click.sns, this));
+      $('#content').on('click', '.sns_icon img, .sns_icon', $.proxy(wedding.click.sns, this));
     },
 
     init: {
@@ -59,71 +61,45 @@ $(() => {
         this.adressSearch(map);
       },
 
-      adressSearch(map) {
-        // 주소-좌표 변환 객체를 생성합니다
-        var geocoder = new kakao.maps.services.Geocoder();
-
-        // 주소로 좌표를 검색합니다
-        geocoder.addressSearch(_ADRESS, function(result, status) {
-
-            // 정상적으로 검색이 완료됐으면
-             if (status === kakao.maps.services.Status.OK) {
-
-                var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
-
-                // 결과값으로 받은 위치를 마커로 표시합니다
-                var marker = new kakao.maps.Marker({
-                    map: map,
-                    position: coords
-                });
-
-                // 인포윈도우로 장소에 대한 설명을 표시합니다
-                // var infowindow = new kakao.maps.InfoWindow({
-                //     content: '<a style="font-size:0.75em; font-family:-webkit-body; font-weight:bold; color:#000;" href="http://mjcon.co.kr/?module=Html&action=SiteComp&sSubNo=2" target="_blank"> [MJ 컨벤션]<br>5층 파티오홀</a>'
-                // });
-                // infowindow.open(map, marker);
-
-                // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
-                map.setCenter(coords);
-            }
+      kakaoNavi() {
+        Kakao.Navi.start({
+            name: "MJ 컨벤션",
+            x: Number(x),
+            y: Number(y),
+            coordType: 'wgs84',
         });
       },
 
-      naverMap() {
-        const map = new naver.maps.Map('map', {
-            center: new naver.maps.LatLng(37.3595704, 127.105399),
-            zoom: 10
-        });
+      adressSearch(map) {
+      // 주소-좌표 변환 객체를 생성합니다
+      var geocoder = new kakao.maps.services.Geocoder();
 
-        naver.maps.Service.geocode({address: _ADRESS}, function(status, response) {
-            if (status !== naver.maps.Service.Status.OK) {
-              return;
-                return alert(_ADRESS + '의 검색 결과가 없거나 기타 네트워크 에러');
-            }
-            var result = response.result;
-            // 검색 결과 갯수: result.total
-            // 첫번째 결과 결과 주소: result.items[0].address
-            // 첫번째 검색 결과 좌표: result.items[0].point.y, result.items[0].point.x
-            var myaddr = new naver.maps.Point(result.items[0].point.x, result.items[0].point.y);
-            map.setCenter(myaddr); // 검색된 좌표로 지도 이동
-            // 마커 표시
-            var marker = new naver.maps.Marker({
-              position: myaddr,
-              map: map
-            });
-            // 마커 클릭 이벤트 처리
-            naver.maps.Event.addListener(marker, "click", function(e) {
-              if (infowindow.getMap()) {
-                  infowindow.close();
-              } else {
-                  infowindow.open(map, marker);
-              }
-            });
-            // 마크 클릭시 인포윈도우 오픈
-            var infowindow = new naver.maps.InfoWindow({
-                content: '<h4> [MJ 컨벤션 3층 다이너스티홀] </h4><a href="http://mjcon.co.kr/?module=Html&action=SiteComp&sSubNo=2" target="_blank"><img src="image/logo.png"></a>'
-            });
-        });
+      // 주소로 좌표를 검색합니다
+      geocoder.addressSearch(_ADRESS, function(result, status) {
+
+          // 정상적으로 검색이 완료됐으면
+           if (status === kakao.maps.services.Status.OK) {
+
+              var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+              x = result[0].x;
+              y = result[0].y;
+
+              // 결과값으로 받은 위치를 마커로 표시합니다
+              var marker = new kakao.maps.Marker({
+                  map: map,
+                  position: coords
+              });
+
+              // 인포윈도우로 장소에 대한 설명을 표시합니다
+              var infowindow = new kakao.maps.InfoWindow({
+                  content: 'MJ 컨벤션 3층<br>다이너스티홀'
+              });
+              infowindow.open(map, marker);
+
+              // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+              map.setCenter(coords);
+          }
+      });
       },
 
       swiper() {
@@ -166,6 +142,9 @@ $(() => {
           case 'kakaotalk':
             wedding.kakaotalk();
             break;
+          case 'navi':
+            wedding.kakaoNavi();
+          break;
           case 'tel':
             location.href = `tel:${telNum}`;
             break;
