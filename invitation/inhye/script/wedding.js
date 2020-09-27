@@ -7,8 +7,8 @@ $(() => {
   const APPKEY = '5375ce90a3391fd48845519304e83309';
   const _ADRESS = '경기도 부천시 소사구 소사본동 65-7';
   let PAGE = 1;
-  let x = 0;
-  let y = 0;
+  var x = 0;
+  var y = 0;
 
 
   wedding = {
@@ -18,7 +18,7 @@ $(() => {
     },
 
     event() {
-      $('#content').on('click', '.photo', $.proxy(wedding.click.photo, this));
+      $('#content').on('click', '.photo:not(.none)', $.proxy(wedding.click.photo, this));
       $('#content').on('click', '#selectedPhoto', $.proxy(wedding.click.selectedPhoto, this));
       $('#content').on('click', '.sns_icon img, .sns_icon', $.proxy(wedding.click.sns, this));
     },
