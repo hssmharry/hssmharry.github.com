@@ -61,15 +61,6 @@ $(() => {
         this.adressSearch(map);
       },
 
-      kakaoNavi() {
-        Kakao.Navi.start({
-            name: "MJ 컨벤션",
-            x: Number(x),
-            y: Number(y),
-            coordType: 'wgs84',
-        });
-      },
-
       adressSearch(map) {
       // 주소-좌표 변환 객체를 생성합니다
       var geocoder = new kakao.maps.services.Geocoder();
@@ -153,6 +144,15 @@ $(() => {
             break;
         }
       }
+    },
+
+    kakaoNavi() {
+      Kakao.Navi.start({
+          name: "MJ 컨벤션",
+          x: Number(x),
+          y: Number(y),
+          coordType: 'wgs84',
+      });
     },
 
     kakaotalk() {
