@@ -19,7 +19,7 @@ $(() => {
     event() {
       $('#content').on('click', '.photo', $.proxy(wedding.click.photo, this));
       $('#content').on('click', '#selectedPhoto', $.proxy(wedding.click.selectedPhoto, this));
-      $('#content').on('click', '.sns_icon img, .sns_icon b', $.proxy(wedding.click.sns, this));
+      $('#content').on('click', '.sns_icon img, .sns_icon b, .sns_icon span', $.proxy(wedding.click.sns, this));
     },
 
     init: {
