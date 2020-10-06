@@ -37,10 +37,11 @@ $(() => {
 
       dDay() {
         const today = new Date();
-        const dDay = new Date(2020, 9, 18);
+        const dDay = new Date(2020, 9, 18) + 1;
         var diff = parseInt((dDay - today) / (24*60*60*1000));
+        var dDayText = dDay == 0 ? 'D - DAY' : `D - ${diff}`;
 
-        $('#dDay').text(`D - ${diff}`);
+        $('#dDay').text(dDayText);
       },
 
       kakaotalk() {
