@@ -36,7 +36,7 @@ $(() => {
 
       dDay() {
         const today = new Date();
-        const dDay = new Date(2020, 7, 29);
+        const dDay = new Date(2020, 9, 18);
         var diff = parseInt((dDay - today) / (24*60*60*1000));
 
         $('#dDay').text(`D - ${diff}`);
@@ -166,6 +166,9 @@ $(() => {
           case 'kakaotalk':
             wedding.kakaotalk();
             break;
+          case 'navi':
+            wedding.kakaoNavi();
+          break;
           case 'tel':
             location.href = `tel:${telNum}`;
             break;
@@ -174,6 +177,15 @@ $(() => {
             break;
         }
       }
+    },
+
+    kakaoNavi() {
+      Kakao.Navi.start({
+          name: "상록아트홀",
+          x: Number(x),
+          y: Number(y),
+          coordType: 'wgs84',
+      });
     },
 
     kakaotalk() {
@@ -189,7 +201,7 @@ $(() => {
         objectType: 'feed',
         content: {
             title: '김영진 & 한아영 결혼합니다',
-            description: '2020-08-30 (일) 12:20',
+            description: '2020-10-18 (일) 17:40',
             imageUrl: 'https://hssmharry.github.io/invitation/hay/image/index2.jpg',
             link: {
               mobileWebUrl: 'https://hssmharry.github.io/invitation/hay/index.html',

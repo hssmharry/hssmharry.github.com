@@ -12,11 +12,17 @@ html, body {background-image:url('../image/bg.jpg'); margin:0 auto; padding:0 au
 .swiper-pagination-bullet {cursor:pointer; width:8; height:8px;}
 .swiper-pagination-bullet:not(:last-child) {margin-right:7px;}
 
+.left {text-align:left;}
+.bold {font-weight:bold;}
+
 .content_text {padding:5%; width:90%; display:flex; flex-direction:column;}
 .content_text.mini {font-size:0.85em; padding:0%; width:100%;}
 .content_text.white {background:rgba(255,255,255, 0.38);}
+.content_text.blue {color:#88aaff}
 .content_text .text {width:100%; font-size:0.9em; line-height:1.65em;}
+.content_text .text.blank {height:18px;}
 .content_text.large .text{font-size:1em;}
+.content_text.big .text{font-size:1.13em;}
 .content_text .img {width:90%; margin-bottom:6%; margin-left:5%;}
 .content_text .img img {width:100%;}
 
