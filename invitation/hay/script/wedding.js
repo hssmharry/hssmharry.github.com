@@ -164,7 +164,7 @@ $(() => {
 
       sns(e) {
         const telNum = $(e.target).parents('td').data('tel');
-        const type = $(e.target).data('type');
+        const type = $(e.target).data('type') || $(e.target).parents('.sns_icon').data('type');
 
         switch(type) {
           case 'kakaotalk':
