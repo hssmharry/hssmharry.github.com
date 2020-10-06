@@ -25,7 +25,6 @@ $(() => {
     init: {
       all() {
         this.swiper();
-        // this.naverMap();
         this.kakaotalk();
         this.kakaoMap();
         this.dDay();
@@ -70,6 +69,12 @@ $(() => {
             // 정상적으로 검색이 완료됐으면
              if (status === kakao.maps.services.Status.OK) {
 
+               var imageSrc = 'https://hssmharry.github.io/invitation/hay/image/wedding.png', // 마커이미지의 주소입니다
+                    imageSize = new kakao.maps.Size(64, 69), // 마커이미지의 크기입니다
+                    imageOption = {offset: new kakao.maps.Point(27, 69)};
+
+                 var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
+
                  var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
                  x = result[0].x;
                  y = result[0].y;
@@ -77,56 +82,32 @@ $(() => {
                 // 결과값으로 받은 위치를 마커로 표시합니다
                 var marker = new kakao.maps.Marker({
                     map: map,
-                    position: coords
+                    position: coords,
+                    image: markerImage // 마커이미지 설정
                 });
 
-                // 인포윈도우로 장소에 대한 설명을 표시합니다
-                // var infowindow = new kakao.maps.InfoWindow({
-                //     content: '<a style="font-size:0.75em; font-family:-webkit-body; font-weight:bold; color:#000;" href="http://mjcon.co.kr/?module=Html&action=SiteComp&sSubNo=2" target="_blank"> [MJ 컨벤션]<br>5층 파티오홀</a>'
-                // });
-                // infowindow.open(map, marker);
+                // 마커가 지도 위에 표시되도록 설정합니다
+                marker.setMap(map);
+
+               // 커스텀 오버레이에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+              var content = '<div class="customoverlay">' +
+                 '  <a href="http://kko.to/UMmMVpxYM" target="_blank">' +
+                 '    <span class="title">서울 상록아트홀 L층 그랜드볼룸</span>' +
+                 '  </a>' +
+                 '</div>';
+
+
+                // 커스텀 오버레이를 생성합니다
+                var customOverlay = new kakao.maps.CustomOverlay({
+                    map: map,
+                    position: coords,
+                    content: content,
+                    yAnchor: 1
+                });
 
                 // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
                 map.setCenter(coords);
             }
-        });
-      },
-
-      naverMap() {
-        const map = new naver.maps.Map('map', {
-            center: new naver.maps.LatLng(37.3595704, 127.105399),
-            zoom: 10
-        });
-        const myaddress = '경기도 부천시 소사구 소사본동 65-7';
-
-        naver.maps.Service.geocode({address: myaddress}, function(status, response) {
-            if (status !== naver.maps.Service.Status.OK) {
-              return;
-                return alert(myaddress + '의 검색 결과가 없거나 기타 네트워크 에러');
-            }
-            var result = response.result;
-            // 검색 결과 갯수: result.total
-            // 첫번째 결과 결과 주소: result.items[0].address
-            // 첫번째 검색 결과 좌표: result.items[0].point.y, result.items[0].point.x
-            var myaddr = new naver.maps.Point(result.items[0].point.x, result.items[0].point.y);
-            map.setCenter(myaddr); // 검색된 좌표로 지도 이동
-            // 마커 표시
-            var marker = new naver.maps.Marker({
-              position: myaddr,
-              map: map
-            });
-            // 마커 클릭 이벤트 처리
-            naver.maps.Event.addListener(marker, "click", function(e) {
-              if (infowindow.getMap()) {
-                  infowindow.close();
-              } else {
-                  infowindow.open(map, marker);
-              }
-            });
-            // 마크 클릭시 인포윈도우 오픈
-            var infowindow = new naver.maps.InfoWindow({
-                content: '<h4> [MJ 컨벤션 5층 파티오홀] </h4><a href="http://mjcon.co.kr/?module=Html&action=SiteComp&sSubNo=2" target="_blank"><img src="image/logo.png"></a>'
-            });
         });
       },
 
@@ -167,6 +148,9 @@ $(() => {
         const type = $(e.target).data('type') || $(e.target).parents('.sns_icon').data('type');
 
         switch(type) {
+          case 'kakaoMap':
+            location.href = `http://kko.to/Ivp8JpxYB`;
+            break;
           case 'kakaotalk':
             wedding.kakaotalk();
             break;
@@ -193,14 +177,6 @@ $(() => {
     },
 
     kakaotalk() {
-      // Kakao.Link.sendCustom({
-      //   templateId: ,
-      //   templateArgs: {
-      //     'title': '이태훈 & 김주연 결혼합니다',
-      //     'description': '2018-11-10 (토) 12:30'
-      //   }
-      // });
-
       Kakao.Link.sendDefault({
         objectType: 'feed',
         content: {
