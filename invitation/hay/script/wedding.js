@@ -6,6 +6,8 @@ $(() => {
   const MAX_PAGE = $('#content .page').length;
   const APPKEY = '5375ce90a3391fd48845519304e83309';
   let PAGE = 1;
+  var x = 0;
+  var y = 0;
 
 
   wedding = {
@@ -68,7 +70,9 @@ $(() => {
             // 정상적으로 검색이 완료됐으면
              if (status === kakao.maps.services.Status.OK) {
 
-                var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+                 var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+                 x = result[0].x;
+                 y = result[0].y;
 
                 // 결과값으로 받은 위치를 마커로 표시합니다
                 var marker = new kakao.maps.Marker({
