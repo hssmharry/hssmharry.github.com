@@ -69,11 +69,11 @@ $(() => {
             // 정상적으로 검색이 완료됐으면
              if (status === kakao.maps.services.Status.OK) {
 
-               var imageSrc = 'https://hssmharry.github.io/invitation/hay/image/wedding.png', // 마커이미지의 주소입니다
-                    imageSize = new kakao.maps.Size(64, 69), // 마커이미지의 크기입니다
-                    imageOption = {offset: new kakao.maps.Point(27, 69)};
-
-                 var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
+               // var imageSrc = 'https://hssmharry.github.io/invitation/hay/image/wedding.png', // 마커이미지의 주소입니다
+               //      imageSize = new kakao.maps.Size(64, 69), // 마커이미지의 크기입니다
+               //      imageOption = {offset: new kakao.maps.Point(27, 69)};
+               //
+               //   var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
 
                  var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
                  x = result[0].x;
@@ -82,8 +82,7 @@ $(() => {
                 // 결과값으로 받은 위치를 마커로 표시합니다
                 var marker = new kakao.maps.Marker({
                     map: map,
-                    position: coords,
-                    image: markerImage // 마커이미지 설정
+                    position: coords
                 });
 
                 // 마커가 지도 위에 표시되도록 설정합니다
