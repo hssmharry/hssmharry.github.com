@@ -37,8 +37,8 @@ $(() => {
 
       dDay() {
         const today = new Date();
-        const dDay = new Date(2020, 9, 18) + 1;
-        var diff = parseInt((dDay - today) / (24*60*60*1000));
+        const dDay = new Date(2020, 9, 18);
+        var diff = parseInt((dDay - today) / (24*60*60*1000)) + 1;
         var dDayText = dDay == 0 ? 'D - DAY' : `D - ${diff}`;
 
         $('#dDay').text(dDayText);
